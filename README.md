@@ -22,4 +22,4 @@
    
 ## 授權
 
-本專案使用 [Creative Commons Attribution-NonCommercial License (CC BY-NC)](https://creativecommons.org/licenses/by-nc/4.0/)。如需進一步了解，請參考 LICENSE 檔案。
+本專案使用 [Creative Commons Attribution-NonCommercial License (CC BY-NC)](https://creativecommons.org/licenses/by-nc/4.0/)。如需進一步了解，請參考 LICENSE.md 檔案。
