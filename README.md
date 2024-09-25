@@ -11,7 +11,7 @@
 
 ## 如何使用
 
-1. 克隆此專案：
+1. 下載此專案：
    ```bash
    git clone https://github.com/yourusername/your-repo-name.git
    ```
@@ -19,6 +19,28 @@
    ```bash
    cd EE1004-homework
    ```
+
+## 如何利用 Vim 自動載入模板
+請在 `.vimrc` 中加入以下程式，就可以用 `\lt` 來載入模板
+```vim
+function! LoadHomeworkTemplate()
+    " 讀取模板檔案
+    let l:template = readfile('template.cpp')
+    " 更新當前日期
+    let l:date = strftime("%Y-%m-%d")
+    " 在模板中替換日期
+    call map(l:template, 'substitute(v:val, "\\[DATE\\]", l:date, "")')
+    " 插入模板到當前緩衝區
+    call append(0, l:template)
+    " 進入插入模式
+    startinsert
+endfunction
+
+" 設定快捷鍵
+nnoremap <leader>lt :call LoadHomeworkTemplate()<CR>
+```
+
+## TODO: 如何使用 debug.h
    
 ## 授權
 
