@@ -17,11 +17,8 @@ int32_t main() {
 
 	if (note[0] >= 'C') note[1]--;
 
-	while (interval >= 7) {
-		note[1]++;
-		interval -= 7;
-	}
-	note[0] += interval;
+	note[1] += interval / 7;
+	note[0] += interval % 7;
 
 	if (note[0] > 'G') {
 		note[1]++;
