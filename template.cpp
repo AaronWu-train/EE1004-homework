@@ -10,6 +10,7 @@ using namespace std;
 
 int32_t main() {
     // Your code here
+	
 
     return 0;
 
