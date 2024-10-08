@@ -16,7 +16,6 @@ double func(double x) {
 	return 1000000 * sin(x) / x;
 }
 
-
 int32_t main() {
 
 	fstream fin("input.bin", ios::in | ios::binary);
@@ -26,23 +25,26 @@ int32_t main() {
 	fin.read((char*) &a, sizeof(a));
 	fin.read((char*) &b, sizeof(b));
 
-	//cin >> a >> b;
+	// cin >> a >> b;
 
-	int flag = 1;
+	int direction = 1;
 	if (a > b) {
 		swap(a, b);
-		flag = -1;
+		direction = -1;
 	}
 
-	double dx = (b-a)/1000000;
+	double dx = (b - a) / 1000000;
 	double ans = 0;
 
 	for (double x = a; x < b; x += dx) {
 		ans += (func(x) + func(x + dx)) / 2 * dx; 
 	}
 
-	int32_t ians = round(flag * ans);
-	fout.write((char*) &ians, sizeof(ians));
+	int32_t int_ans = round(direction * ans);
+	fout.write((char*) &int_ans, sizeof(int_ans));
+
+ 	fin.close();
+ 	fout.close();
 
 	return 0;
 
